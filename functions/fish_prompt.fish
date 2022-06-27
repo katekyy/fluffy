@@ -6,7 +6,7 @@ function git::dirty
   echo ( command git status -s --ignore-submodules=dirty 2> /dev/null )
 end
 
-function git::detached_head
+function git::head_detach
   echo ( command git rev-parse --symbolic-full-name HEAD )
 end
 
@@ -37,18 +37,18 @@ function fish_prompt
   if [ (git::branch_name) ]
     set -l git_branch ( git::branch_name )
 
-    if [ (contains HEAD (git::detached_head)) ]
+    if [ (contains HEAD (git::head_detach)) ]
       set git_info ' ' $git_marker ' ' $red 'HD ' $git_branch ' '
-      set git_detached_head_addition $red 'HD '
+      set git_head_detach_addition $red 'HD '
     else
       set git_info ' ' $git_marker ' ' $green $git_branch ' '
-      set git_detached_head_addition ''
+      set git_head_detach_addition ''
     end
 
     if [ (git::dirty) ]
-      set git_info ' ' $git_marker ' ' $git_detached_head_addition $yellow 'M ' $git_branch ' '
+      set git_info ' ' $git_marker ' ' $git_head_detach_addition $yellow 'M ' $git_branch ' '
     else
-      set git_info ' ' $git_marker ' ' $git_detached_head_addition $green $git_branch ' '
+      set git_info ' ' $git_marker ' ' $git_head_detach_addition $green $git_branch ' '
     end
     echo -n -s $git_info $normal
   else
