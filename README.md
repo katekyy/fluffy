@@ -1,8 +1,9 @@
 ### Fluffy
-A fluffy-ish like minimal theme for [Oh My Fish][omf-link] based on [nai](https://github.com/oh-my-fish/theme-nai).
 <div>
   <img src="./fluff.png"/>
 </div>
+
+A fluffy-ish like minimal theme for [Oh My Fish][omf-link] based on [nai](https://github.com/oh-my-fish/theme-nai).
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?style=flat-square)](https://fishshell.com)
