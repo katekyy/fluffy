@@ -1,3 +1,1 @@
-function fish_title
-  # Customize terminal window title
-end
+function fish_title; end
