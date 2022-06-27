@@ -1,7 +1,9 @@
-<img src="https://cdn.rawgit.com/oh-my-fish/oh-my-fish/e4f1c2e0219a17e2c748b824004c8d0b38055c16/docs/logo.svg" align="left" width="144px" height="144px"/>
+# Fluffy
+<div>
+  <img src="./fluff.png"/>
+</div>
 
-#### fluffy
-> A theme for [Oh My Fish][omf-link].
+> A fluffy-ish like minimal theme for [Oh My Fish][omf-link] based on [nai](https://github.com/oh-my-fish/theme-nai).
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?style=flat-square)](https://fishshell.com)
@@ -9,26 +11,31 @@
 
 <br/>
 
-
 ## Install
 
 ```fish
 $ omf install fluffy
 ```
 
-
 ## Features
 
-* Lorem ipsum dolor sit amet.
-* Consectetur adipisicing elit.
+- Displays git branch name: 
+- Detecting if repository is dirty or if head is detached.
 
+##  Basic Customization
+```
+🡪 cd ~/.local/share/omf/themes/fluffy/functions
+🡪 nano fish_prompt.fish
+```
+You will see different arrow that you can uncomment:
+<div>
+  <img src=".pastes/2022-06-27-16-30-12.png"/>
+</div>
 
-## Screenshot
+<br/>
 
-<p align="center">
-<img src="{{SCREENSHOT_URL}}">
-</p>
-
+> Warning: If you will choose to do not have any arrow
+> then you will need to comment line 58.
 
 # License
 

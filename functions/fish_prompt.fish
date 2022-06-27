@@ -21,9 +21,11 @@ function fish_prompt
   set -l arrow ''
   set -l git_marker $gray ''
 
+  # gitter: set -a arrow ' '
   # smallest: set -a arrow '➜'
   # small: set -a arrow '🡢'
-  set -a arrow '🡪'
+  # normal: 
+    set -a arrow '🡪'
   # big: set -a arrow '🡲'
   # bigger: set -a arrow '🡺'
   # heavy: set -a arrow '🢂'
