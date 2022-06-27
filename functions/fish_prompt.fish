@@ -26,7 +26,7 @@ function fish_prompt
   set -a arrow '🡪'
   # big: set -a arrow '🡲'
   # bigger: set -a arrow '🡺'
-  # heavy: set -a arrow '🢂'                          
+  # heavy: set -a arrow '🢂'
 
   set -l cwd ( basename (prompt_pwd) )
 
