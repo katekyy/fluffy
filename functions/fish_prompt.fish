@@ -35,8 +35,6 @@ function fish_prompt
   if [ (git::branch_name) ]
     set -l git_branch ( git::branch_name )
 
-    # if
-
     if [ (contains HEAD (git::detached_head)) ]
       set git_info ' ' $git_marker ' ' $red 'HD ' $git_branch ' '
       set git_detached_head_addition $red 'HD '
