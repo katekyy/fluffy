@@ -1,6 +1,6 @@
 ### Fluffy
 <div>
-  <img src="./fluff.png"/>
+  <img src=".pastes/fluff.png"/>
 </div>
 
 A fluffy-ish like theme for [Oh My Fish][omf-link] based on [nai](https://github.com/oh-my-fish/theme-nai).
@@ -11,34 +11,24 @@ A fluffy-ish like theme for [Oh My Fish][omf-link] based on [nai](https://github
 
 <br/>
 
+> **Warning:**
+> You need to have Nerd Fonts in order to get this theme to work.
+
 #### Features
 
-- Truncated CWD (just the current folder name)
+- Truncated CWD (just the current and previous folder name)
 - Git branch, dirty state (M) and head detach (HD)
+- Icons
 
 ####  Basic Customization
+```bash
+~> cd ~/.local/share/omf/themes/fluffy/functions
+~> nano fish_prompt.fish
 ```
-🡪 cd ~/.local/share/omf/themes/fluffy/functions
-🡪 nano fish_prompt.fish
-```
-You will see different arrow that you can uncomment:
+You will see different settings that you can set:
 <div>
-  <img src=".pastes/2022-06-27-16-30-12.png"/>
+  <img src=".pastes/2022-06-28-18-39-13.png"/>
 </div>
 
 <br/>
 
-> Warning: If you will choose to do not have any arrow
-> then you will need to comment line 58.
-
-##### License
-
-[MIT][mit] © [katekyy][author] et [al][contributors]
-
-
-[mit]:            https://opensource.org/licenses/MIT
-[author]:         https://github.com/{{USER}}
-[contributors]:   https://github.com/{{USER}}/theme-fluffy/graphs/contributors
-[omf-link]:       https://www.github.com/oh-my-fish/oh-my-fish
-
-[license-badge]:  https://img.shields.io/badge/license-MIT-007EC7.svg?style=flat-square
