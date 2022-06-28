@@ -11,7 +11,7 @@ A fluffy-ish like theme for [Oh My Fish][omf-link] based on [nai](https://github
 
 <br/>
 
-> **Warning:**
+> **Warning**:
 > You need to have Nerd Fonts in order to get this theme to work.
 
 #### Features
