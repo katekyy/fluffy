@@ -1,3 +1,23 @@
+################ CONFIG ################
+
+  set -g background ( set_color -b red )
+  set -g color ( set_color red )
+
+  set -g marker ''
+  set -g f_marker ''
+  set -g git_marker $normal ''
+
+  set -g icon_background_color ( set_color -b black )
+  set -g icon_foreground_color ( set_color white )
+  set -g icon_marker_color ( set_color black )
+  set -g icon_enabled true             # default: false
+  set -g icon ''
+  
+
+########################################
+
+
+
 function git::branch_name
   echo ( command git symbolic-ref HEAD 2> /dev/null | sed -e 's|^refs/heads/||' )
 end
@@ -10,51 +30,58 @@ function git::head_detach
   echo ( command git rev-parse --symbolic-full-name HEAD )
 end
 
+function pwd::better
+  set -l dir (pwd)
+  set -l plank (string split -r -m2 '/' $dir)
+  set -l forte ()
+  set -l home $HOME
+  set -l home_array (string split -r -m2 '/' $HOME)
+
+  if [ $dir = $home ]
+    echo '~'
+  else
+    echo '../'(string trim $plank[2])'/'(string trim $plank[3])
+  end
+end
+
 function fish_prompt
   set -l yellow ( set_color yellow )
-  set -l red ( set_color red )
-  set -l blue ( set_color blue )
   set -l green ( set_color green )
+  set -l red ( set_color red )
   set -l normal ( set_color normal white )
-  set -l gray ( set_color E7E7E7 white )
+  set -l background_normal ( set_color -b normal )
 
-  set -l arrow ''
-  set -l git_marker $gray ''
+  set -l cwd ( pwd::better )
 
-  # gitter: set -a arrow ' '
-  # smallest: set -a arrow '➜'
-  # small: set -a arrow '🡢'
-  # normal: 
-    set -a arrow '🡪'
-  # big: set -a arrow '🡲'
-  # bigger: set -a arrow '🡺'
-  # heavy: set -a arrow '🢂'
+  if [ $icon_enabled = true ]
+    set -g f_icon $icon_background_color ' ' $icon_foreground_color $icon ' ' $background $icon_marker_color $f_marker $normal
+  else
+    set -g f_icon ''
+  end
 
-  set -l cwd ( basename (prompt_pwd) )
-
-  echo -n -s $blue $arrow $normal $cwd
+  echo -n -s $color $background $f_icon ' ' $cwd ' ' $background_normal $color $marker $normal
 
   if [ (git::branch_name) ]
-    set -l git_branch ( git::branch_name )
+    set -l git_branch '' ( git::branch_name )
 
     if [ (contains HEAD (git::head_detach)) ]
-      set git_info ' ' $git_marker ' ' $red 'HD ' $git_branch ' '
+      set git_info '' $red 'HD ' $git_branch $normal $git_marker
       set git_head_detach_addition $red 'HD '
     else
-      set git_info ' ' $git_marker ' ' $green $git_branch ' '
-      set git_head_detach_addition ''
+      set git_info '' $green $git_branch $normal $git_marker
+      set git_head_detach_addition ' '
     end
 
     if [ (git::dirty) ]
-      set git_info ' ' $git_marker ' ' $git_head_detach_addition $yellow 'M ' $git_branch ' '
+      set git_info '' $git_head_detach_addition $yellow 'M ' $git_branch ' ' $normal $git_marker
     else
-      set git_info ' ' $git_marker ' ' $git_head_detach_addition $green $git_branch ' '
+      set git_info '' $git_head_detach_addition $green $git_branch ' ' $normal $git_marker
     end
-    echo -n -s $git_info $normal
+    echo -n -s $git_info $normal ' '
   else
     echo -n -s $normal ' '
   end
 
-  echo -n -s $normal ' '
+  echo -n -s $normal
 
 end
