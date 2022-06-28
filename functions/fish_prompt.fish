@@ -1,7 +1,8 @@
 ################ CONFIG ################
 
   set -g background ( set_color -b red )
-  set -g color ( set_color red )
+  set -g marker_color ( set_color red )      # must be the same as background color
+  set -g color ( set_color white )
 
   set -g marker ''
   set -g f_marker ''
@@ -10,9 +11,8 @@
   set -g icon_background_color ( set_color -b black )
   set -g icon_foreground_color ( set_color white )
   set -g icon_marker_color ( set_color black )
-  set -g icon_enabled true             # default: false
+  set -g icon_enabled false            # default: false
   set -g icon ''
-  
 
 ########################################
 
@@ -59,14 +59,14 @@ function fish_prompt
     set -g f_icon ''
   end
 
-  echo -n -s $color $background $f_icon ' ' $cwd ' ' $background_normal $color $marker $normal
+  echo -n -s  $f_icon $color $background ' ' $cwd ' ' $background_normal $marker_color $marker $normal
 
   if [ (git::branch_name) ]
     set -l git_branch '' ( git::branch_name )
 
     if [ (contains HEAD (git::head_detach)) ]
-      set git_info '' $red 'HD ' $git_branch $normal $git_marker
-      set git_head_detach_addition $red 'HD '
+      set git_info '' $red ' HD ' $git_branch $normal $git_marker
+      set git_head_detach_addition $red ' HD '
     else
       set git_info '' $green $git_branch $normal $git_marker
       set git_head_detach_addition ' '
