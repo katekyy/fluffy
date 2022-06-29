@@ -16,7 +16,7 @@ A fluffy-ish like theme for [Oh My Fish][omf-link] based on [nai](https://github
 
 #### Features
 
-- Truncated CWD (just the current and previous folder name)
+- Truncated CWD (just the current and previous directory name)
 - Git branch, dirty state (M) and head detach (HD)
 - Icons
 
