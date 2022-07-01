@@ -3,7 +3,7 @@
   <img src=".pastes/fluff.png"/>
 </div>
 
-A fluffy-ish like theme for [Oh My Fish][omf-link] based on [nai](https://github.com/oh-my-fish/theme-nai).
+A fluffy-ish like theme for [Oh My Fish][https://github.com/oh-my-fish/oh-my-fish] based on [nai](https://github.com/oh-my-fish/theme-nai).
 
 [![MIT License](https://img.shields.io/badge/license-MIT-007EC7.svg?color=%237CAFC2&style=flat-square)](/LICENSE)
 [![Fish Shell Version](https://img.shields.io/badge/fish-v3.0.0-007EC7.svg?color=%237CAFC2&style=flat-square)](https://fishshell.com)
