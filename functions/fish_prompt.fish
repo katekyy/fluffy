@@ -27,7 +27,7 @@ function git::dirty
 end
 
 function git::head_detach
-  echo ( command git rev-parse --symbolic-full-name HEAD )
+  echo ( command git symbolic-ref HEAD )
 end
 
 function pwd::better
